@@ -34,7 +34,7 @@ const portfolioItems = [
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="relative">
       {/* Achtergrond die verandert */}
       <BackgroundChanger gradients={gradients} interval={5000} />
 

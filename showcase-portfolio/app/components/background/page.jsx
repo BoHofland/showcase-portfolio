@@ -28,22 +28,23 @@ export default function BackgroundChanger({ gradients = [], interval = 5000 }) {
   };
 
   return (
-    <div className="h-screen w-screen relative">
-      {/* Huidige achtergrondkleur */}
-      <div
-        className={`absolute inset-0 bg-gradient-to-r ${currentGradient} transition-all duration-500`}
-        style={{ zIndex: 1 }}
-      ></div>
+<div className="fixed inset-0 w-full h-full z-0">
+  {/* Huidige achtergrondkleur */}
+  <div
+    className={`absolute inset-0 bg-gradient-to-r ${currentGradient} transition-all duration-500`}
+    style={{ zIndex: 1 }}
+  ></div>
 
-      {/* Nieuwe achtergrondkleur */}
-      <div
-        className={`absolute inset-0 bg-gradient-to-r ${nextGradient}`}
-        style={{
-          zIndex: 2,
-          opacity: isFading ? 1 : 0,
-          transition: "opacity 3s ease-in-out",
-        }}
-      ></div>
-    </div>
+  {/* Nieuwe achtergrondkleur */}
+  <div
+    className={`absolute inset-0 bg-gradient-to-r ${nextGradient}`}
+    style={{
+      zIndex: 2,
+      opacity: isFading ? 1 : 0,
+      transition: "opacity 3s ease-in-out",
+    }}
+  ></div>
+</div>
+
   );
 }
